@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Canteen</title>
+    <!-- Example: Include Stripe.js if using Stripe -->
+    <!-- <script src="https://js.stripe.com/v3/"></script> -->
+</head>
+<body>
+    <h1>Checkout</h1>
+    <div id="orderDetails">
+        <!-- Order summary will be displayed here -->
+        <p>Review your order...</p>
+        <!-- Example: Display cart items and total dynamically -->
+    </div>
+
+    <form id="paymentForm">
+        <h2>Payment Information</h2>
+
+        <!-- Placeholder for Payment Gateway Elements -->
+        <!-- For example, if using Stripe Elements, a div like this would be used -->
+        <!-- <div id="card-element"></div> -->
+        <!-- Used to display form errors. -->
+        <!-- <div id="card-errors" role="alert"></div> -->
+
+        <p><strong>Note:</strong> This is a placeholder. Real payment integration (e.g., Stripe, PayPal) is required here.</p>
+
+        <div>
+            <label for="mockCardNumber">Mock Card Number (for demo):</label>
+            <input type="text" id="mockCardNumber" name="mockCardNumber" value="4242424242424242">
+        </div>
+        <div>
+            <label for="mockExpiry">Mock Expiry (MM/YY):</label>
+            <input type="text" id="mockExpiry" name="mockExpiry" value="12/25">
+        </div>
+        <div>
+            <label for="mockCVC">Mock CVC:</label>
+            <input type="text" id="mockCVC" name="mockCVC" value="123">
+        </div>
+
+        <button type="submit">Place Order & Pay (Mock)</button>
+    </form>
+
+    <script>
+        // const stripe = Stripe('YOUR_STRIPE_PUBLISHABLE_KEY'); // Initialize Stripe
+        // const elements = stripe.elements();
+        // const cardElement = elements.create('card');
+        // cardElement.mount('#card-element'); // Mount Stripe Element
+
+        document.getElementById('paymentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // In a real scenario:
+            // 1. Create a payment method or token using Stripe.js (or other gateway's SDK)
+            //    stripe.createPaymentMethod({ type: 'card', card: cardElement, ... })
+            //    .then(function(result) {
+            //        if (result.error) {
+            //            // Display error.message in your UI.
+            //            // const errorElement = document.getElementById('card-errors');
+            //            // errorElement.textContent = result.error.message;
+            //        } else {
+            //            // Send paymentMethod.id to your server to create a PaymentIntent or Charge
+            //            fetch('/api/create-payment-intent', { // Or your relevant backend endpoint
+            //                method: 'POST',
+            //                headers: { 'Content-Type': 'application/json' },
+            //                body: JSON.stringify({ payment_method_id: result.paymentMethod.id, order_id: /* your_order_id */ })
+            //            })
+            //            .then(response => response.json())
+            //            .then(paymentResult => {
+            //                if (paymentResult.success) {
+            //                    alert('Payment successful! Order placed.');
+            //                    // Redirect to an order confirmation page
+            //                } else {
+            //                    alert('Payment failed: ' + (paymentResult.message || 'Unknown error'));
+            //                }
+            //            });
+            //        }
+            //    });
+
+            // Mock functionality:
+            const mockCardNumber = document.getElementById('mockCardNumber').value;
+            if (mockCardNumber === '4242424242424242') { // Simulate a successful payment
+                alert('Mock Payment Successful! Order placed. (This is a simulation - no real payment was processed).');
+                // Here you would typically also send order details to the backend to finalize the order
+                // and update its payment status.
+                // For example, update order status in your backend:
+                // fetch('/api/order/update-payment-status', {method: 'POST', ... body: {order_id: ..., status: 'paid'}})
+            } else {
+                alert('Mock Payment Failed. Please use the mock card number.');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Canteen</title>
+</head>
+<body>
+    <h1>Admin Login</h1>
+    <form id="adminLoginForm">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Login</button>
+    </form>
+    <script>
+        document.getElementById('adminLoginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Here you would typically make an API call to your backend
+            // For example:
+            // const formData = new FormData(event.target);
+            // const data = Object.fromEntries(formData.entries());
+            // fetch('/auth/login', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({...data, role: 'admin'}) })
+            // .then(response => response.json())
+            // .then(result => {
+            //     if(result.message === 'Login successful' && result.role === 'admin') {
+            //         // Store token, redirect to dashboard
+            //         alert('Admin login successful! Redirecting to dashboard...');
+            //         window.location.href = 'dashboard.html';
+            //     } else {
+            //         alert(result.message || 'Login failed');
+            //     }
+            // })
+            // .catch(error => alert('Error during login: ' + error));
+            alert('Admin login functionality to be implemented! This would try to log in as an admin.');
+        });
+    </script>
+</body>
+</html>
