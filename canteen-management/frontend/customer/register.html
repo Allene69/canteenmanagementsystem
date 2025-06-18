@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customer Registration - Canteen</title>
+    <link rel="stylesheet" href="../static/css/style.css">
 </head>
 <body>
+    <div class="auth-container">
     <h1>Customer Registration</h1>
     <form id="registerForm">
         <div>
@@ -23,6 +25,7 @@
         <button type="submit">Register</button>
     </form>
     <p>Already have an account? <a href="login.html">Login here</a></p>
+    </div> <!-- end auth-container -->
     <script>
         document.getElementById('registerForm').addEventListener('submit', function(event) {
             event.preventDefault();
