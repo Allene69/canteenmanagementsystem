@@ -98,8 +98,8 @@ form div {
 
 form label {
     display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+    margin-bottom: 5px; /* Overridden by new styles */
+    font-weight: bold; /* Overridden by new styles */
 }
 
 form input[type="text"],
@@ -108,9 +108,9 @@ form input[type="email"],
 form input[type="number"],
 form textarea {
     width: calc(100% - 22px); /* Full width minus padding and border */
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 10px; /* Overridden by new styles */
+    border: 1px solid #ddd; /* Overridden by new styles */
+    border-radius: 4px; /* Overridden by new styles */
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
@@ -166,22 +166,24 @@ th {
 /* Menu Item Styling */
 .menu-item {
     background: #fff;
-    border: 1px solid #ddd;
-    padding: 15px;
+    /* border: 1px solid #ddd; */ /* Replaced by card styling */
+    padding: 15px; /* Will be overridden by card styling's padding: 20px */
     margin-bottom: 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    /* border-radius: 5px; */ /* Replaced by card styling's border-radius: 12px */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Will be enhanced by card styling */
     display: flex; /* Use flexbox for layout */
     flex-direction: column; /* Stack items vertically */
     align-items: center; /* Center items horizontally */
     text-align: center; /* Center text */
+    width: 100%;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 .menu-item img {
     max-width: 150px; /* Control image size */
     height: auto;
-    margin-bottom: 10px;
-    border-radius: 4px;
+    /* margin-bottom: 10px; */ /* Replaced by card styling's margin-bottom: 15px */
+    /* border-radius: 4px; */ /* Replaced by card styling's border-radius: 8px */
 }
 
 .menu-item h3 {
@@ -190,9 +192,9 @@ th {
 }
 
 .menu-item p {
-    font-size: 0.9em;
-    color: #666;
-    margin-bottom: 5px;
+    font-size: 0.9em; /* Will be overridden by card styling's font-size: 0.95em */
+    color: #666; /* Will be overridden by card styling's color: #555 */
+    margin-bottom: 5px; /* Will be overridden by card styling's margin-bottom: 10px */
 }
 
 .menu-item button {
@@ -220,12 +222,7 @@ th {
     padding: 20px 0; /* Padding around the grid */
 }
 
-.menu-item {
-    /* .menu-item styling is already decent from previous step (flex column, centered) */
-    /* Ensure it takes full width of grid cell if not already set */
-    width: 100%;
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-}
+/* .menu-item is further enhanced by card styles below */
 
 /* Cart Page (cart.html) */
 #cartItems {
@@ -300,7 +297,7 @@ th {
 .auth-container {
     max-width: 400px;
     margin: 40px auto; /* Centering the form container */
-    padding: 20px;
+    padding: 20px; /* Overridden by new styles */
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -309,11 +306,11 @@ th {
 .auth-container h1 {
     text-align: center;
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Overridden by new styles */
 }
 
 .auth-container form div {
-    margin-bottom: 15px; /* Increased spacing for auth forms */
+    margin-bottom: 15px; /* Overridden by new styles */
 }
 
 .auth-container form button[type="submit"] {
@@ -332,17 +329,17 @@ th {
 /* .order class styling was added in a previous step, ensure it's good */
 .order {
     background: #fff;
-    border: 1px solid #ddd;
-    padding: 20px; /* Increased padding */
+    /* border: 1px solid #ddd; */ /* Replaced by card styling */
+    /* padding: 20px; */ /* Will be overridden by card styling's padding: 25px */
     margin-bottom: 20px;
-    border-radius: 8px; /* More rounded corners */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    /* border-radius: 8px; */ /* Replaced by card styling's border-radius: 12px */
+    /* box-shadow: 0 2px 5px rgba(0,0,0,0.08); */ /* Will be enhanced by card styling */
 }
 
 .order h3 {
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
+    border-bottom: 1px solid #eee; /* Will be overridden by card styling */
+    padding-bottom: 10px; /* Will be overridden by card styling */
+    margin-bottom: 15px; /* Will be overridden by card styling */
 }
 
 .order-items {
@@ -351,8 +348,8 @@ th {
 }
 
 .order-items li {
-    padding: 5px 0;
-    border-bottom: 1px dashed #f0f0f0;
+    padding: 5px 0; /* Will be overridden by card styling */
+    border-bottom: 1px dashed #f0f0f0; /* Will be overridden by card styling */
 }
 .order-items li:last-child {
     border-bottom: none;
@@ -434,3 +431,261 @@ table.admin-data-table tr:nth-child(even) {
 #ordersList .order button:hover {
     background-color: #d35400;
 }
+
+/* --- Uiverse-Inspired Button Styles --- */
+
+/* Primary Button */
+.btn-ui-primary {
+    background-color: #007bff; /* A common primary blue */
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px; /* Slightly more rounded */
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none; /* For <a> tags styled as buttons */
+    display: inline-block; /* For <a> tags */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-ui-primary:hover, .btn-ui-primary:focus {
+    background-color: #0056b3; /* Darker blue on hover/focus */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-ui-primary:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Secondary/Outline Button */
+.btn-ui-secondary {
+    background-color: transparent;
+    color: #007bff; /* Same blue as primary for text/border */
+    padding: 10px 22px; /* Slightly smaller padding */
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-ui-secondary:hover, .btn-ui-secondary:focus {
+    background-color: #007bff;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-ui-secondary:active {
+    transform: translateY(-1px);
+}
+
+/* Remove generic button styling for these new classes if they conflict */
+/* The new classes are more specific, so they should override the old 'button' styles. */
+/* However, let's ensure old button styles don't add unwanted borders or backgrounds. */
+button.btn-ui-primary, button.btn-ui-secondary,
+input[type="submit"].btn-ui-primary, input[type="submit"].btn-ui-secondary {
+  /* Resetting some base button styles that might interfere */
+  border: none;
+  background-image: none; /* In case of gradient overrides */
+}
+
+/* --- Uiverse-Inspired Card Styling --- */
+
+/* Enhancing .menu-item (from customer/menu.html) */
+.menu-item {
+    /* Existing styles: background, border, padding, margin-bottom, flex, align-items, text-align */
+    /* box-shadow: 0 2px 4px rgba(0,0,0,0.05); (already there) */
+    border-radius: 12px; /* More pronounced rounding */
+    border: 1px solid #e9ecef; /* Lighter, more subtle border */
+    padding: 20px; /* Slightly more padding */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Ensure content respects border-radius */
+}
+
+.menu-item:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1); /* More prominent shadow on hover */
+}
+
+.menu-item img {
+    /* Existing styles: max-width, height, margin-bottom, border-radius */
+    border-radius: 8px; /* Consistent rounding for image within card */
+    margin-bottom: 15px; /* More space below image */
+    object-fit: cover; /* Ensure image covers its area well, might need fixed height too */
+    /* Consider adding a fixed height for images if they vary a lot, e.g., height: 150px; */
+}
+
+.menu-item h3 {
+    /* Existing: margin-top, color */
+    font-size: 1.25em; /* Slightly larger title */
+    margin-bottom: 8px;
+}
+
+.menu-item p {
+    /* Existing: font-size, color, margin-bottom */
+    font-size: 0.95em; /* Slightly larger description text */
+    color: #555; /* Darker grey for better readability */
+    margin-bottom: 10px; /* Adjust spacing */
+}
+
+.menu-item .price { /* Assuming price might be wrapped in a <p class="price"> or similar */
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #007bff; /* Primary color for price */
+    margin-bottom: 15px;
+}
+
+/* Ensure button inside menu-item uses the new styles if not already overridden */
+.menu-item .btn-ui-primary {
+    width: auto; /* Allow button to size to its content if it was set to 100% */
+    padding: 10px 20px; /* Adjust padding if needed for card context */
+}
+
+
+/* Enhancing .order (from customer/order_history.html and admin/manage_orders.html) */
+.order {
+    /* Existing: background, border, padding, margin-bottom, border-radius, box-shadow */
+    border-radius: 12px; /* More pronounced rounding */
+    border: 1px solid #e9ecef; /* Lighter border */
+    padding: 25px; /* More padding */
+    transition: box-shadow 0.3s ease;
+}
+
+.order:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08); /* Subtle hover shadow change */
+}
+
+.order h3 {
+    /* Existing: border-bottom, padding-bottom, margin-bottom */
+    font-size: 1.3em; /* Slightly larger order title */
+    color: #343a40; /* Darker heading color */
+}
+
+.order p { /* General paragraphs within the order card */
+    color: #495057; /* Slightly darker text for better readability */
+    margin-bottom: 8px;
+}
+
+.order .order-meta span { /* For key info like date, total, status */
+    font-weight: 500;
+    color: #212529;
+}
+
+.order-items {
+    /* Existing: list-style, padding-left */
+    margin-top: 15px; /* Space above items list */
+}
+
+.order-items li {
+    /* Existing: padding, border-bottom */
+    padding: 8px 0; /* Adjust padding */
+    border-bottom: 1px solid #f1f3f5; /* Lighter separator for items */
+    color: #555;
+}
+.order-items li:last-child {
+    border-bottom: none;
+}
+
+/* Styling for buttons within admin order lists (if any) */
+#ordersList .order .btn-ui-secondary { /* Example if we use secondary buttons */
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+/* --- Uiverse-Inspired Form Styling --- */
+
+/* General form enhancements (applies to .auth-container forms and .admin-form if used) */
+form label {
+    font-weight: 500; /* Slightly less bold, or adjust as needed */
+    color: #495057; /* Darker label color */
+    margin-bottom: 8px; /* More space below label */
+    font-size: 0.95em;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+form input[type="number"],
+form textarea {
+    /* Existing: width, padding, border, border-radius, box-sizing */
+    border: 1px solid #ced4da; /* Standard Bootstrap-like border color */
+    border-radius: 6px; /* Slightly softer rounding */
+    padding: 12px; /* Increase padding for a more spacious feel */
+    font-size: 1em;
+    color: #495057;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+form input[type="text"]:focus,
+form input[type="password"]:focus,
+form input[type="email"]:focus,
+form input[type="number"]:focus,
+form textarea:focus {
+    border-color: #80bdff; /* Blue border on focus, similar to Bootstrap */
+    outline: 0; /* Remove default browser outline */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Subtle glow effect */
+}
+
+/* Styling for .auth-container forms (customer/admin login, customer register) */
+.auth-container {
+    /* Existing: max-width, margin, padding, background, border-radius, box-shadow */
+    padding: 30px 40px; /* More padding for auth forms */
+    border: 1px solid #e9ecef; /* Optional subtle border */
+}
+
+.auth-container h1 {
+    /* Existing: text-align, color, margin-bottom */
+    font-size: 1.8em; /* Adjust title size */
+    margin-bottom: 25px;
+}
+
+.auth-container form div {
+    margin-bottom: 20px; /* More space between form fields */
+}
+
+.auth-container .btn-ui-primary { /* Ensure login/register buttons are prominent */
+    width: 100%;
+    padding: 12px; /* Re-iterate padding if needed */
+    font-size: 1.05em;
+    margin-top: 10px; /* Space above the button */
+}
+
+.auth-container p { /* "Don't have an account?" text */
+    font-size: 0.9em;
+    color: #6c757d;
+}
+
+/* Styling for .admin-form (e.g., Add New Item form in manage_items.html) */
+.admin-form {
+    /* This class can be added to admin forms for specific styling if needed */
+    /* For now, relying on general form enhancements and .admin-main-content context */
+    background-color: #f8f9fa; /* Light background for admin forms */
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+}
+
+.admin-form h2 { /* If forms have their own subheadings */
+    font-size: 1.5em;
+    color: #343a40;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+/* Ensure admin form buttons are styled correctly */
+.admin-form .btn-ui-primary {
+    /* Styles for primary admin button already defined */
+    /* Add any specific overrides here if needed */
+    margin-top: 15px; /* Space above submit button */
+}
+
+/* Example of how to add a specific class to an admin form for styling */
+/* In manage_items.html, change <form id="addItemForm"> to <form id="addItemForm" class="admin-form"> */

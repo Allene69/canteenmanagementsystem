@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu - Canteen</title>
     <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
     <h1>Our Menu</h1>
@@ -13,22 +14,22 @@
         <img src="../static/images/placeholder_food_item.png" alt="Food Item 1" style="width:100px; height:auto;">
         <h3>Delicious Burger</h3>
         <p>A classic beef burger with all the fixings.</p>
-        <p>Price: $9.99</p>
-        <button onclick="addToCart(1)">Add to Cart</button>
+        <p class="price">Price: $9.99</p>
+        <button onclick="addToCart(1)" class="btn-ui-primary">Add to Cart</button>
     </div>
     <div class="menu-item">
         <img src="../static/images/placeholder_food_item.png" alt="Food Item 2" style="width:100px; height:auto;">
         <h3>Refreshing Salad</h3>
         <p>A healthy mix of fresh greens and vegetables.</p>
-        <p>Price: $7.50</p>
-        <button onclick="addToCart(2)">Add to Cart</button>
+        <p class="price">Price: $7.50</p>
+        <button onclick="addToCart(2)" class="btn-ui-primary">Add to Cart</button>
     </div>
     <div class="menu-item">
         <img src="../static/images/placeholder_food_item.png" alt="Food Item 3" style="width:100px; height:auto;">
         <h3>Pasta Special</h3>
         <p>Chef's special pasta for the day.</p>
-        <p>Price: $12.00</p>
-        <button onclick="addToCart(3)">Add to Cart</button>
+        <p class="price">Price: $12.00</p>
+        <button onclick="addToCart(3)" class="btn-ui-primary">Add to Cart</button>
     </div>
     <!-- More items would be loaded here dynamically in a real app -->
 </div>
@@ -57,5 +58,6 @@
         //     alert('Add to cart functionality to be implemented for item ' + itemId);
         // }
     </script>
+    <script src="../static/js/animations.js" defer></script>
 </body>
 </html>

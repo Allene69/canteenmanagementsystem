@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout - Canteen</title>
     <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <!-- Example: Include Stripe.js if using Stripe -->
     <!-- <script src="https://js.stripe.com/v3/"></script> -->
 </head>
@@ -40,7 +41,7 @@
             <input type="text" id="mockCVC" name="mockCVC" value="123">
         </div>
 
-        <button type="submit">Place Order & Pay (Mock)</button>
+        <button type="submit" class="btn-ui-primary">Place Order & Pay (Mock)</button>
     </form>
 
     <script>
@@ -92,5 +93,6 @@
             }
         });
     </script>
+    <script src="../static/js/animations.js" defer></script>
 </body>
 </html>

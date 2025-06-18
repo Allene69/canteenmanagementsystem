@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Cart - Canteen</title>
     <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
     <header>
@@ -32,7 +33,7 @@
                     <p>Price: $9.99</p>
                 </div>
                 <div class="cart-item-actions">
-                    <button onclick="removeFromCart(1)">Remove</button>
+                    <button onclick="removeFromCart(1)" class="btn-ui-secondary">Remove</button>
                 </div>
             </div>
             <div class="cart-item">
@@ -42,7 +43,7 @@
                     <p>Price: $7.50 each</p>
                 </div>
                 <div class="cart-item-actions">
-                    <button onclick="removeFromCart(2)">Remove</button>
+                    <button onclick="removeFromCart(2)" class="btn-ui-secondary">Remove</button>
                 </div>
             </div>
             <!-- End Example Items -->
@@ -51,7 +52,7 @@
 
         <div class="cart-summary">
             <h3>Total: $<span id="cartTotal">25.00</span></h3> <!-- Example Total -->
-            <a href="checkout.html" class="button btn-checkout">Proceed to Checkout</a>
+            <a href="checkout.html" class="btn-ui-primary">Proceed to Checkout</a>
             <br>
             <a href="menu.html" style="display: block; margin-top: 10px;">Continue Shopping</a>
         </div>
@@ -80,5 +81,6 @@
         }
         checkCartEmpty(); // Call on load for the static example
     </script>
+    <script src="../static/js/animations.js" defer></script>
 </body>
 </html>

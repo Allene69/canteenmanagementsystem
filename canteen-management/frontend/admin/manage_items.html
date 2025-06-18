@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Food Items - Canteen Admin</title>
     <link rel="stylesheet" href="../static/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
     <h1>Manage Food Items</h1>
@@ -17,7 +18,7 @@
     </nav>
     <main class="admin-main-content">
         <h2>Add New Item</h2>
-        <form id="addItemForm">
+        <form id="addItemForm" class="admin-form">
             <div>
                 <label for="itemName">Item Name:</label>
                 <input type="text" id="itemName" name="itemName" required>
@@ -34,7 +35,7 @@
                 <label for="itemStock">Stock Quantity:</label>
                 <input type="number" id="itemStock" name="itemStock" required>
             </div>
-            <button type="submit">Add Item</button>
+            <button type="submit" class="btn-ui-primary">Add Item</button>
         </form>
 
         <h2>Existing Items</h2>
@@ -51,5 +52,6 @@
         });
         // Logic to fetch and display existing items will be added later
     </script>
+    <script src="../static/js/animations.js" defer></script>
 </body>
 </html>
